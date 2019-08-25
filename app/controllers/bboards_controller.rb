@@ -2,7 +2,9 @@ class BboardsController < ApplicationController
   before_action :set_bboard, only: [:show, :edit, :update, :destroy]
   
   def index
-    @bboards = Bboard.all
+  
+      @bboards = Bboard.all
+    
   end
 
   def show

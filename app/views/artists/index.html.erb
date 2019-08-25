@@ -1,0 +1,10 @@
+<h1>Artist</h1>
+<%= link_to "Add Artist", new_bboard_artist_path %> 
+<%= #link_to "Back",  %>
+
+
+<ul>
+  <%= @artists.each do |artist| %>
+    <li><%= link_to artist.name, bboard_artist_path(artist) %></li>
+  <% end %>
+</ul>

@@ -1,2 +1,6 @@
-<h1>Bboards#edit</h1>
-<p>Find me in app/views/bboards/edit.html.erb</p>
+<h1> Edit Billboard </h1>
+
+<%= render "form", bboard: @bboard %>
+
+<%= link_to "Show", bboard_path(@bboard) %>
+<%= link_to "Back", bboards_path %>

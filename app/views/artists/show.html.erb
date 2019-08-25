@@ -1,0 +1,16 @@
+<h1><%= @artist.name %></h1>
+<h4>Name: <%= @artist.name %></h4>
+<h4>Age: <%= @artist.age %></h4>
+<h4>Genre: <%= @artist.genre %></h4>
+<br />
+<h2>Songs</h2>
+<% @artist.songs.each do |song| %>
+  <%= render 'songs/song', { song: song } %>
+<% end %>
+<br />
+<%= link_to "Add Song", new_artist_song_path(@artist) %>
+<br />
+<br />
+<%= link_to "Edit Artist", edit_bboard_artist_path([@bboard, @artist])  %>
+<%= link_to "Delete Artist", [@bboard, @artist], method: :delete %>
+<%= link_to "Back to Artists", bboard_artists_path(@bboard) %>

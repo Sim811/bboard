@@ -1,0 +1,7 @@
+<%= form_with(model: bboard, local: true) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+    <%= f.submit "Create" %>
+  </div>
+<% end %>

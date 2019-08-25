@@ -1,2 +1,7 @@
-<h1>Bboards#new</h1>
-<p>Find me in app/views/bboards/new.html.erb</p>
+<h1>New Board</h1>
+
+<%= render "form", bboard: @bboard %>
+
+
+<br />
+<%= link_to "Back", bboards_path %>
