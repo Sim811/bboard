@@ -10,7 +10,7 @@ class ArtistsController < ApplicationController
   end
 
   def new
-    @artist = @bboard.artists.new
+    @artist = Artist.new
   end
 
   def edit
@@ -18,16 +18,16 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update(artist_params)
-      redirect_to [@bboard, @artist]
+      redirect_to artist_path(@artist)
     else
       render :edit
     end
   end
 
   def create
-    @artist = @bboard.artists.new(artist_params)
+    @artist = Artist.new(artist_params)
     if @artist.save
-      redirect_to [@bboard, @artist]
+      redirect_to artist_path(@artist)
     else
       render :new
     end 
@@ -35,7 +35,7 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist.destroy
-    redirect_to bboards_artists_path
+    redirect_to artists_path
   end
 
   private
@@ -48,7 +48,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
-  def set_params
+  def artist_params
     params.require(:artist).permit(:name, :age, :genre)
   end
 
